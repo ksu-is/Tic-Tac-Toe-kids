@@ -1,11 +1,11 @@
-# Initialize board with position number and empty values 
+# Initialize game board (a Dictionary data type) with position number and empty values 
 # as key/value pairs
 board = { 1 : ' ', 2 : ' ', 3: ' ',
          4 : ' ', 5 : ' ', 6 : ' ', 
          7 : ' ', 8 : ' ', 9 : ' '}
 
 # Initialize variables
-count = 0         # counter to track number of steps
+count = 0         # counter to track number of steps (max 9)
 playing = True    # boolean (true or false) to check if the game should continue
 tie = False       # boolean (true or false) to check if there is a tie
 curr_player = 'X' # variable to store current player identifier
@@ -55,8 +55,8 @@ def check_winner(marker):
     else:
         return False
 
-
-def insert_input(spot_num, marker):
+# 3 and 'O'
+def insert_input(spot_num, marker): 
     while board[spot_num] != ' ':
         print("spot taken, pick another number")
         spot_num = int(input())
